@@ -1,0 +1,9 @@
+.chatroom {
+  position: absolute;
+  right: 0px;
+  height: 80vh;
+}
+
+.chatroom-name {
+  position: relative;
+}

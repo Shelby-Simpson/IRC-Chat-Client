@@ -1,0 +1,9 @@
+.chatroom-list {
+  /* position: absolute; */
+  height: 1000px;
+}
+
+.chatroom-list-item-btn {
+  height: 50px;
+  width: 200px;
+}
