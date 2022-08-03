@@ -13,6 +13,6 @@
 1. On one client, enter a name in the textbox and click 'New Group Chat'
 2. The new group chat should appear in the list of chat rooms.
 
-#Instructions to Create a New Personal Room
+# Instructions to Create a New Personal Room
 1. On one client, select a client from the dropdown and click 'New Direct Message'.
 2. The new personal room should appear in the list of chat rooms.
