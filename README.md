@@ -1,6 +1,4 @@
-# Instructions to Begin Using the Client
-## These instructions assume the Server is running
-
+# Instructions to Begin Using the Client (assuming the Server is running)
 1. Run 'npm start' in the project's directory
 2. Connect to localhost:3006 in the browser
 3. Enter a nickname and click 'submit'
