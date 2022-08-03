@@ -1,5 +1,8 @@
-# Instructions to Begin Using the Client (assuming the Server is running)
-1. Run 'npm start' in the project's directory.
+# Instructions to Run the Server
+1. Run 'go run websocket' in the server's directory
+
+# Instructions to Begin Using the Client
+1. Run 'npm start' in the client's directory.
 2. Connect to localhost:3006 in the browser.
 3. Enter a nickname and click 'submit'.
 4. Open another instance of the client by connecting to localhost:3006 in another browser tab.
