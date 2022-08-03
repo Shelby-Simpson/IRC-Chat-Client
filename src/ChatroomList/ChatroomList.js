@@ -1,12 +1,17 @@
 import './ChatroomList.css';
 
-const ChatroomList = ({Chatrooms, SetGroupchat}) => {
+const ChatroomList = ({Groupchats, PersonalRooms, setChatroom, nickname}) => {
   return (
     <div className="chatroom-list">
       <h3>Chat Rooms</h3>
-      {Object.keys(Chatrooms).map(chatroom => (
-          <div key={chatroom}>
-            <button className="chatroom-list-item-btn" onClick={(chatroom) => SetGroupchat(chatroom)} type="button">{chatroom}</button>
+      {Object.keys(Groupchats).map(groupchat=> (
+          <div key={groupchat}>
+            <button value={groupchat} className="chatroom-list-item-btn" onClick={(groupchat) => setChatroom(groupchat)} type="button">{groupchat}</button>
+          </div>
+      ))}
+      {Object.keys(PersonalRooms).map(personalRoom=> (
+          <div key={personalRoom}>
+            <button value={personalRoom} className="chatroom-list-item-btn" onClick={(personalRoom) => setChatroom(personalRoom)} type="button">{personalRoom.replace(nickname, "")}</button>
           </div>
       ))}
     </div>
