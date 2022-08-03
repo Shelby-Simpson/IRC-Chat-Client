@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './Chatroom.css';
 
+// The chat room in which a user can see messages and type their own
 const Chatroom = ({ChatRoomName, ChatRoomType, Messages, SendMessage, nickname}) => {
   const [message, setMessage] = useState("")
   return (

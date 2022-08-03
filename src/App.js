@@ -40,6 +40,7 @@ function App() {
     console.log("Connected")
   }
 
+  // When a new message comes from the server, this switch statement filters it
   socket.onmessage = (e) => {
     const data = JSON.parse(e.data)
     switch (data["Type"]) {
@@ -52,14 +53,12 @@ function App() {
         break
       case "NewClient":
         setClients(clients.concat([data["Payload"]]))
-        // Notify chats
         break
       case "NewGroupChat":
         setGroupchats({ ...groupchats, [data["Payload"]]: []})
         setChatroomVisibility({...chatroomVisibility, [data["Payload"]]: false})
         break
       case "NewPersonalRoom":
-        // const personalRoomName = data["Payload"].replace(nickname, "")
         setPersonalRooms({ ...personalRooms, [data["Payload"]]: []})
         setChatroomVisibility({...chatroomVisibility, [data["Payload"]]: false})
         break
@@ -75,6 +74,7 @@ function App() {
     }
   }
 
+  // Sends a message to the server to broadcast to a group chat
   const sendGroupChatMessage = (message) => {
     socket.send(JSON.stringify({
       Type: "groupchatmessage",
@@ -85,6 +85,7 @@ function App() {
     }))
   }
 
+  // Sends a message to the server to broadcast to a personal room
   const sendPersonalRoomMessage = (message) => {
     socket.send(JSON.stringify({
       Type: "personalroommessage",
@@ -95,6 +96,7 @@ function App() {
     }))
   }
 
+  // Sends a message to the server to create a new group chat
   const createGroupchat = () => {
     socket.send(JSON.stringify({
       Type: "creategroupchat",
@@ -102,6 +104,7 @@ function App() {
     }))
   }
 
+  // Sends a message to the server to create a new personal room
   const createPersonalRoom = () => {
     socket.send(JSON.stringify({
       Type: "createpersonalroom",
@@ -109,6 +112,7 @@ function App() {
     }))
   }
 
+  // Displays the correct chat room
   const setChat = (e) => {
     setChatroom(e.target.value)
     chatroomVisibility[e.target.value] = true

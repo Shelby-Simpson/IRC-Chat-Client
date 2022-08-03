@@ -1,5 +1,6 @@
 import './ChatroomList.css';
 
+// The list of chat rooms on the left-hand side of the screen
 const ChatroomList = ({Groupchats, PersonalRooms, setChatroom, nickname}) => {
   return (
     <div className="chatroom-list">
